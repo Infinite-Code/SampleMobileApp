@@ -7,9 +7,13 @@ The following plugins have been added:
 
  * `react-navigation`
 	 * Added `DrawerNavigator` and `TabNavigator`
- * `redux` and `react-redux`
+ * `redux`, `react-redux`
 	 * Please check `main.js` and also the following folders
 		 * `containers`, `reducers`, `actions`
+	 * For `redux-persist`
+		 * App will automatically load data from storage
+		 * A loading screen will be shown (NOTE: deliberately slowed down)
+		 * Only `test` reducer is whitelisted to be saved
 
 Also configured the following:
 
