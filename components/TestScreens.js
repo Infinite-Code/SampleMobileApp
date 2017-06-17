@@ -15,12 +15,16 @@ export class HomeScreen extends React.Component {
             <View>
                 <Title>Home</Title>
                 <Title>{this.props.userName}, {this.props.email}</Title>
+                <Title>{this.props.timestamp}</Title>
                 <Button
                     onPress={() => navigate('DrawerOpen')}
                     title="Open Drawer" />
                 <Button
                     onPress={this.props.onUpdateUserName}
                     title="Update Username" />
+                <Button
+                    onPress={this.props.onUpdateTimestamp}
+                    title="Update Timestamp" />
             </View>
 
         );
@@ -29,7 +33,9 @@ export class HomeScreen extends React.Component {
 HomeScreen.propTypes = {
     userName: PropTypes.string.isRequired,
     email: PropTypes.string.isRequired,
+    timestamp: PropTypes.string.isRequired,
     onUpdateUserName: PropTypes.func.isRequired,
+    onUpdateTimestamp: PropTypes.func.isRequired,
 }
 
 

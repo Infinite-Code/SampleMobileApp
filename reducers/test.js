@@ -1,6 +1,9 @@
+const getDateNow = () => new Date().toISOString()
+
 const initialState = {
     userName: 'Jane Doe',
     email: 'jane@example.com',
+    timestamp: getDateNow(),
 }
 
 const test = (state = initialState, action) => {
@@ -9,6 +12,11 @@ const test = (state = initialState, action) => {
             return {
                 ...state,
                 userName: action.data,
+            }
+        case 'TEST_UPDATE_TIMESTAMP':
+            return {
+                ...state,
+                timestamp: getDateNow(),
             }
         default:
             return state

@@ -4,3 +4,9 @@ export const updateUserName = (userName) => {
         data: userName,
     }
 }
+
+export const updateTimestamp = () => {
+    return {
+        type: 'TEST_UPDATE_TIMESTAMP',
+    }
+}
