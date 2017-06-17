@@ -6,9 +6,10 @@ Just a starter project that defines a simple structure that should be usable for
 The following plugins have been added:
 
  * react-navigation
+	 * Added DrawerNavigator and TabNavigator
 
 Also configured the following:
 
  * ESLint
  * Jest
-     * Added tests with mocking
+	 * Added tests with mocking
