@@ -5,8 +5,11 @@ Just a starter project that defines a simple structure that should be usable for
 
 The following plugins have been added:
 
- * react-navigation
-	 * Added DrawerNavigator and TabNavigator
+ * `react-navigation`
+	 * Added `DrawerNavigator` and `TabNavigator`
+ * `redux` and `react-redux`
+	 * Please check `main.js` and also the following folders
+		 * `containers`, `reducers`, `actions`
 
 Also configured the following:
 
