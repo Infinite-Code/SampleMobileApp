@@ -5,10 +5,11 @@ import {
 
 import TabBarBottom from './TabBarBottom';
 import TestScreens from './TestScreens';
+import { HomeScreen } from '../containers/TestScreens'
 
 
 const MainTab = TabNavigator({
-    Home: {screen: TestScreens.HomeScreen},
+    Home: {screen: HomeScreen},
     Profile: {screen: TestScreens.ProfileScreen},
 }, {
     tabBarComponent: TabBarBottom,

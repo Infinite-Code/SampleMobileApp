@@ -31,10 +31,6 @@
             "error",
             "single"
         ],
-        "semi": [
-            "error",
-            "always"
-        ],
         "no-global-assign": "error",
         "keyword-spacing": "error",
         "space-before-blocks": "error"

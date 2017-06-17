@@ -3,6 +3,7 @@ import {
     Button,
     View,
 } from 'react-native';
+import PropTypes from 'prop-types'
 
 import { Title } from './Common';
 
@@ -13,14 +14,24 @@ export class HomeScreen extends React.Component {
         return (
             <View>
                 <Title>Home</Title>
+                <Title>{this.props.userName}, {this.props.email}</Title>
                 <Button
                     onPress={() => navigate('DrawerOpen')}
                     title="Open Drawer" />
+                <Button
+                    onPress={this.props.onUpdateUserName}
+                    title="Update Username" />
             </View>
 
         );
     }
 }
+HomeScreen.propTypes = {
+    userName: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    onUpdateUserName: PropTypes.func.isRequired,
+}
+
 
 export class ProfileScreen extends React.Component {
     render() {
