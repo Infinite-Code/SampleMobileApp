@@ -10,3 +10,5 @@ The following plugins have been added:
 Also configured the following:
 
  * ESLint
+ * Jest
+     * Added tests with mocking
