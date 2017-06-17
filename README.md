@@ -1,5 +1,5 @@
-SampleMobileApp
-===============
+Sample React Native Mobile App
+==============================
 
 Just a starter project that defines a simple structure that should be usable for future projects.
 
