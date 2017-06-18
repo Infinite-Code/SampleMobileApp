@@ -4,6 +4,7 @@ const initialState = {
     userName: 'Jane Doe',
     email: 'jane@example.com',
     timestamp: getDateNow(),
+    description: '',
 }
 
 const test = (state = initialState, action) => {
@@ -17,6 +18,11 @@ const test = (state = initialState, action) => {
             return {
                 ...state,
                 timestamp: getDateNow(),
+            }
+        case 'TEST_UPDATE_DESCRIPTION':
+            return {
+                ...state,
+                description: action.data,
             }
         default:
             return state

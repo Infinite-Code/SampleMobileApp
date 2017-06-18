@@ -10,6 +10,7 @@ import {
     AsyncStorage,
 } from 'react-native'
 import { createStore, compose, applyMiddleware } from 'redux'
+import thunk from 'redux-thunk';
 import { Provider } from 'react-redux'
 import { persistStore, autoRehydrate } from 'redux-persist'
 
@@ -26,7 +27,8 @@ class AppWithStore extends React.Component {
             ready: false,
         }
 
-        this.store = createStore(reducers, undefined, compose(autoRehydrate()))
+        this.store = createStore(reducers, applyMiddleware(thunk),
+                                 compose(autoRehydrate()))
 
         persistStore(this.store, {
             whitelist: ['test'],

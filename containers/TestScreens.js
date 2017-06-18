@@ -4,6 +4,8 @@ import TestScreens from '../components/TestScreens';
 import {
     updateUserName,
     updateTimestamp,
+    updateDescription,
+    getDescription,
 } from '../actions/test';
 
 
@@ -12,6 +14,7 @@ const mapStateToProps = (state) => {
         userName: state.test.userName,
         email: state.test.email,
         timestamp: state.test.timestamp,
+        description: state.test.description,
     }
 }
 
@@ -22,6 +25,13 @@ const mapDispatchToProps = (dispatch) => {
         },
         onUpdateTimestamp: () => {
             dispatch(updateTimestamp())
+        },
+        onGetDescription: () => {
+            dispatch(updateDescription('Getting bio...'))
+            dispatch(getDescription())
+                .then(() => {
+                    console.log('onGetDescription.complete');
+                })
         }
     }
 }
