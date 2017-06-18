@@ -7,7 +7,7 @@ The following plugins have been added:
 
  * `react-navigation`
 	 * Added `DrawerNavigator` and `TabNavigator`
- * `redux`, `react-redux`, `redux-persist`
+ * `redux`, `react-redux`, `redux-persist`, `redux-thunk`
 	 * Please check code in `main.js` and also the following folders
 		 * `containers`, `reducers`, `actions`
 	 * App will automatically load data from storage
