@@ -21,6 +21,11 @@ import reducers from './reducers'
 
 
 class AppWithStore extends React.Component {
+    state: {
+        ready: boolean,
+    }
+    store: any
+
     constructor(props) {
         super(props)
         this.state = {

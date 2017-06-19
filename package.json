@@ -5,7 +5,9 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest __tests__",
-    "test-fix": "jest -u __tests__"
+    "test-fix": "jest -u __tests__",
+    "flow": "flow",
+    "flow-stop": "flow stop"
   },
   "dependencies": {
     "react": "16.0.0-alpha.12",
@@ -17,6 +19,8 @@
     "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
+    "flow-bin": "^0.45.0",
+    "flow-typed": "^2.1.2",
     "babel-jest": "20.0.3",
     "babel-preset-react-native": "2.0.0",
     "jest": "20.0.4",

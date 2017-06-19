@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 import {
     Button,
@@ -42,6 +44,7 @@ HomeScreen.propTypes = {
     userName: PropTypes.string.isRequired,
     email: PropTypes.string.isRequired,
     timestamp: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
     onUpdateUserName: PropTypes.func.isRequired,
     onUpdateTimestamp: PropTypes.func.isRequired,
     onGetDescription: PropTypes.func.isRequired,

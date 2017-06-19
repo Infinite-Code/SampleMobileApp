@@ -16,6 +16,21 @@ The following plugins have been added:
 
 Also configured the following:
 
- * ESLint
  * Jest
 	 * Added tests with mocking
+ * ESLint
+ * Flow
+	 * Basic configuration
+
+Setup ESLint
+------------
+To make ESLint work properly with Flow, follow the instructions below. Normally it is easier to setup `eslint` globally, so that your editors can access it, most modern editors should have support for `eslint`:
+
+```
+npm install -g eslint
+npm install -g babel-eslint
+npm install -g eslint-plugin-flowtype
+npm install -g eslint-plugin-react
+```
+
+refs https://github.com/gajus/eslint-plugin-flowtype#installation

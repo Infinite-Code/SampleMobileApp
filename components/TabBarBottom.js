@@ -9,9 +9,9 @@ import type {
   NavigationState,
   NavigationScreenProp,
   Style,
-} from '../../TypeDefinition';
+} from '../node_modules/react-navigation/src/TypeDefinition';
 
-import type { TabScene } from './TabView';
+import type { TabScene } from '../node_modules/react-navigation/src/views/TabView/TabView';
 
 type DefaultProps = {
   activeTintColor: string,
