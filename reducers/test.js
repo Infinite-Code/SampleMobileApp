@@ -5,6 +5,7 @@ const initialState = {
     email: 'jane@example.com',
     timestamp: getDateNow(),
     description: '',
+    gamescore: 'GAME_SCORE',
 }
 
 const test = (state = initialState, action) => {
@@ -23,6 +24,11 @@ const test = (state = initialState, action) => {
             return {
                 ...state,
                 description: action.data,
+            }
+        case 'TEST_UPDATE_GAMESCORE':
+            return {
+                ...state,
+                gamescore: action.data,
             }
         default:
             return state

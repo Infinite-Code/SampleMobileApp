@@ -22,6 +22,12 @@ Also configured the following:
  * Flow
 	 * Basic configuration
 
+Issues
+------
+1. There are issues with the parse library (v1.9.2) and React Native (v0.45.1)
+	* You need to modify the source code to make it work well
+	* refs https://github.com/Infinite-Code/SampleMobileApp/issues/1#issuecomment-309706968
+
 Setup ESLint
 ------------
 To make ESLint work properly with Flow, follow the instructions below. Normally it is easier to setup `eslint` globally, so that your editors can access it, most modern editors should have support for `eslint`:

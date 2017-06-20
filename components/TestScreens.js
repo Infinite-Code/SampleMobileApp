@@ -35,6 +35,11 @@ export class HomeScreen extends React.Component {
                 <Button
                     onPress={this.props.onGetDescription}
                     title="Get @cheeming bio" />
+
+                <Title>{this.props.gamescore}</Title>
+                <Button
+                    onPress={this.props.onGetParseGameScore}
+                    title="Get parse GameScore" />
             </View>
 
         );
@@ -43,11 +48,16 @@ export class HomeScreen extends React.Component {
 HomeScreen.propTypes = {
     userName: PropTypes.string.isRequired,
     email: PropTypes.string.isRequired,
-    timestamp: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
     onUpdateUserName: PropTypes.func.isRequired,
+
+    timestamp: PropTypes.string.isRequired,
     onUpdateTimestamp: PropTypes.func.isRequired,
+
+    description: PropTypes.string.isRequired,
     onGetDescription: PropTypes.func.isRequired,
+
+    gamescore: PropTypes.string.isRequired,
+    onGetParseGameScore: PropTypes.func.isRequired,
 }
 
 

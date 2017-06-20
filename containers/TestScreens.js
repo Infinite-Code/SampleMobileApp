@@ -8,6 +8,7 @@ import {
     updateTimestamp,
     updateDescription,
     getDescription,
+    getParseGameScore,
 } from '../actions/test';
 
 
@@ -17,6 +18,7 @@ const mapStateToProps = (state) => {
         email: state.test.email,
         timestamp: state.test.timestamp,
         description: state.test.description,
+        gamescore: state.test.gamescore,
     }
 }
 
@@ -34,6 +36,9 @@ const mapDispatchToProps = (dispatch) => {
                 .then(() => {
                     console.log('onGetDescription.complete');
                 })
+        },
+        onGetParseGameScore: () => {
+            dispatch(getParseGameScore())
         }
     }
 }

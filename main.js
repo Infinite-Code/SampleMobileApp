@@ -13,7 +13,7 @@ import { createStore, compose, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux'
 import { persistStore, autoRehydrate } from 'redux-persist'
-
+import Parse from 'parse/react-native'
 
 import App from './components/App'
 import { Title } from './components/Common'
@@ -46,6 +46,12 @@ class AppWithStore extends React.Component {
                 this.setState({ready: true})
             }, 1000)
         });
+
+        // setup parse
+        const PARSE_APP_ID = '123456'
+        const PARSE_SERVER_URL = 'http://localhost:1337/parse/'
+        Parse.initialize(PARSE_APP_ID)
+        Parse.serverURL = PARSE_SERVER_URL
     }
     render() {
         if (!this.state.ready) {
