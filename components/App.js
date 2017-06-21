@@ -4,6 +4,7 @@ import {
 } from 'react-navigation';
 
 import TabBarBottom from './TabBarBottom';
+import MainTabs from './MainTabs';
 import TestScreens from './TestScreens';
 import { HomeScreen } from '../containers/TestScreens'
 
@@ -17,7 +18,7 @@ const MainTab = TabNavigator({
 });
 
 const App = DrawerNavigator({
-    Home: {screen: MainTab},
+    Home: {screen: MainTabs},
     About: {screen: TestScreens.AboutScreen},
 });
 export default App;
