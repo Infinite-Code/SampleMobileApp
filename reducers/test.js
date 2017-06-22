@@ -1,7 +1,7 @@
 import Immutable from 'seamless-immutable'
 import { createReducer } from 'reduxsauce'
 
-import Types from '../actions/types'
+import { Types } from '../actions/test'
 
 
 const getDateNow = () => new Date().toISOString()

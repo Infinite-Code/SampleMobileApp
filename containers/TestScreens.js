@@ -4,9 +4,7 @@ import { connect } from 'react-redux'
 
 import TestScreens from '../components/TestScreens';
 import {
-    updateUserName,
-    updateTimestamp,
-    updateDescription,
+    Creators,
     getDescription,
 } from '../actions/test';
 
@@ -23,13 +21,13 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         onUpdateUserName: () => {
-            dispatch(updateUserName('John Doe'))
+            dispatch(Creators.testUpdateUsername('John Doe'))
         },
         onUpdateTimestamp: () => {
-            dispatch(updateTimestamp())
+            dispatch(Creators.testUpdateTimestamp())
         },
         onGetDescription: () => {
-            dispatch(updateDescription('Getting bio...'))
+            dispatch(Creators.testUpdateDescription('Getting bio...'))
             dispatch(getDescription())
                 .then(() => {
                     console.log('onGetDescription.complete');

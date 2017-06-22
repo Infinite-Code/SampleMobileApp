@@ -1,27 +1,10 @@
 import { createActions } from 'reduxsauce'
 
-import Types from '../actions/types'
-
-
-export const updateUserName = (userName) => {
-    return {
-        type: Types.TEST_UPDATE_USERNAME,
-        userName: userName,
-    }
-}
-
-export const updateTimestamp = () => {
-    return {
-        type: Types.TEST_UPDATE_TIMESTAMP,
-    }
-}
-
-export const updateDescription = (description) => {
-    return {
-        type: Types.TEST_UPDATE_DESCRIPTION,
-        description: description,
-    }
-}
+export const { Types, Creators } = createActions({
+    testUpdateUsername: ['userName'],
+    testUpdateTimestamp: null,
+    testUpdateDescription: ['description'],
+}, {})
 
 // thunks
 export const getDescription = () => {
@@ -34,11 +17,11 @@ export const getDescription = () => {
                 },
                 // Error
                 (reason) => {
-                    dispatch(updateDescription('Failed to get bio'));
+                    dispatch(Creators.testUpdateDescription('Failed to get bio'));
                 })
             .then(
                 (data)  => {
-                    dispatch(updateDescription(data.bio));
+                    dispatch(Creators.testUpdateDescription(data.bio));
                 });
     }
 }
