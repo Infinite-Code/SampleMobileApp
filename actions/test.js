@@ -1,32 +1,13 @@
 import Parse from 'parse/react-native'
+import { createActions } from 'reduxsauce'
 
-// basic actions
-export const updateUserName = (userName) => {
-    return {
-        type: 'TEST_UPDATE_USERNAME',
-        data: userName,
-    }
-}
 
-export const updateTimestamp = () => {
-    return {
-        type: 'TEST_UPDATE_TIMESTAMP',
-    }
-}
-
-export const updateDescription = (description) => {
-    return {
-        type: 'TEST_UPDATE_DESCRIPTION',
-        data: description,
-    }
-}
-
-export const updateGamescore = (gamescore) => {
-    return {
-        type: 'TEST_UPDATE_GAMESCORE',
-        data: gamescore,
-    }
-}
+export const { Types, Creators } = createActions({
+    testUpdateUsername: ['userName'],
+    testUpdateTimestamp: null,
+    testUpdateDescription: ['description'],
+    testUpdateGamescore: ['gamescore'],
+}, {})
 
 // thunks
 export const getDescription = () => {
@@ -39,11 +20,11 @@ export const getDescription = () => {
                 },
                 // Error
                 (reason) => {
-                    dispatch(updateDescription('Failed to get bio'));
+                    dispatch(Creators.testUpdateDescription('Failed to get bio'));
                 })
             .then(
                 (data)  => {
-                    dispatch(updateDescription(data.bio));
+                    dispatch(Creators.testUpdateDescription(data.bio));
                 });
     }
 }
@@ -64,15 +45,15 @@ export const getParseGameScore = () => {
                 query.get(newGS.id, {
                     success: (gameScore) => {
                         let gameScoreStr = gameScore.get('playerName') + ', ' + gameScore.get('score') + ', ' + gameScore.get('createdAt')
-                        dispatch(updateGamescore(gameScoreStr))
+                        dispatch(Creators.testUpdateGamescore(gameScoreStr))
                     },
                     error: (object, error) => {
-                        dispatch(updateGamescore('ERROR getting Gamescore: ' + error.code + ', ' + error.message))
+                        dispatch(Creators.testUpdateGamescore('ERROR getting Gamescore: ' + error.code + ', ' + error.message))
                     }
                 })
             },
             error: (object, error) => {
-                dispatch(updateGamescore('ERROR saving Gamescore: ' + error.code + ', ' + error.message))
+                dispatch(Creators.testUpdateGamescore('ERROR saving Gamescore: ' + error.code + ', ' + error.message))
             }
         })
 
